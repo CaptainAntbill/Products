@@ -29,7 +29,7 @@ $price = $_POST["price"];
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "select product_name, price from product";
+  $sql = "select * from product";
 
   if($conn){
     $result = $conn->query($sql);
@@ -47,11 +47,11 @@ $conn = null;
 ?>
 <div id="navbarBasicExample" class="navbar-menu">
   <div class="navbar-start">
-    <a class="navbar-item">
+    <a href="ingreso.html" class="navbar-item">
       Inicio
     </a>
 
-    <a class="navbar-item">
+    <a href="list_products.php" class="navbar-item">
       Productos
     </a>
   </div>
@@ -66,13 +66,16 @@ $conn = null;
   <table class="table is-fullwidth is-hoverable">
       <th>Nombre</th>
     <th>Precio</th>
+    <th>Estado</th>
     <th></th>
     <?php   foreach ($result as $value){  ?>
     <tr>
       <td><?php echo "<br>" . $value["product_name"];?></td>
       <td><?php echo "<br>" . $value["price"];?></td>
-      <td><a style="position: absolute; left:85%" class="button is-link is-rounded" href="update.html">Editar</a>
-        <a style="position: absolute; left:20%%" class="button is-danger is-rounded" href="">Eliminar</a></td>
+      <td><?php echo "<br>" . $value["is_active"];?></td>
+      <td><?php echo "<a style='position: absolute; left:85%' class='button is-link is-rounded' href='update.php?id=" .$value["id"]
+                    ."&precio=".$value["price"]."&nombre=".$value["product_name"]."&active=".$value["is_active"]."'>Editar</a>" ?>
+        <?php echo "<a style='position: absolute; left:20%%' class='button is-danger is-rounded' href='delete.php?id=".$value["id"]."'>Eliminar</a></td>"?>
     </tr>
   <?php } ?>
   </table>
