@@ -24,7 +24,7 @@
         Inicio
       </a>
 
-      <a class="navbar-item" href="list_products">
+      <a class="navbar-item" href="list_products.php">
         Productos
       </a>
     </div>
@@ -34,17 +34,22 @@
     </div>
   </div>
 </nav><br>
-    <h1 class="title" style="text-align: center">Actualizar Precio</h1>
+    <?php echo "<h1 class='title' style='text-align: center'>Actualizar ".$_GET["nombre"]."</h1>"?>
     <div class="container is-fluid">
       <div style="background-color:; border-radius:3px; padding:6px">
-      <form class="form" action="index.html" method="post">
+      <?php echo "<form class='form' action='updateProduct.php?id=".$_GET[id]."' method='post'>"?>
         <label class="subtitle is-4">Precio Nuevo</label><br><br>
-        <input class="input is-info" pattern="(.*[0-9])" type="text" name="updatePrecio"><br><br>
+        <?php echo "<input class='input is-info' pattern='(.*[0-9])' type='text' value='". $_GET[precio]."' name='updatePrecio'><br><br>"?>
         <label class="subtitle is-4">Esta Activo?</label><br><br>
         <div class="select">
           <select name="is_active">
-            <option>Si</option>
-            <option>No</option>
+            <?php
+            if ($_GET["active"]==1) {
+              echo "<option value='1'>Si</option> <option value='0'>No</option>";
+            }  else {
+              echo "<option value='0'>No</option> <option value='1'>Si</option>";
+            }
+            ?>
           </select>
         </div>
         <input class="button is-link is-outlined" type="submit" value="Enviar"><br><br>
