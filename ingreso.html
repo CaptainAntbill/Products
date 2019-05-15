@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="css/bulma.css">
+  <script src="jquery/jquery-3.4.0.js"></script>
+  <script src="jquery/jquery.validate.min.js"></script>
+  <script src="jquery/validation.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
@@ -21,11 +25,11 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="ingreso.html">
-          Inicio
+          HOME
         </a>
 
         <a class="navbar-item" href="list_products.php">
-          Productos
+          PRODUCTS
         </a>
       </div>
       <div class="navbar-end">
@@ -35,21 +39,22 @@
     </div>
   </nav><br>
   <h1 class="title" style="text-align: center">THE NIGGA SHOP</h1>
-  <div class="container">
-    <form action="insert.php" method="post">
-      <label class="subtitle is-4">Name</label>
+  <div class="notification  container">
+    <form action="insert.php" name="formulario" method="post">
+      <label class="subtitle is-4 is-dark">Name</label>
       <input class="input is-info" pattern="(.*[a-z])" type="text" name="product">
       <label class="subtitle is-4">Price</label>
       <input class="input is-info" required pattern="(.*[0-9])" type="text" name="price"><br><br>
-      <label class="subtitle is-4">Esta Activo?</label><br><br>
+      <label class="subtitle is-4">Is Active?</label><br><br>
       <div class="select">
         <select name="is_active">
-          <option value="1">Si</option>
+          <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
       </div>
-      <input class="button is-link is-outlined" type="submit" value="Enviar">
+      <input class="button is-primary is-outlined" type="submit" value="SEND">
     </form>
+  </div>
   </div>
 </body>
 </html>
