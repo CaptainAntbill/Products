@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="css/bulma.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
@@ -21,11 +22,11 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="ingreso.html">
-          Inicio
+          HOME
         </a>
 
         <a class="navbar-item" href="list_products.php">
-          Productos
+          PRODUCTS
         </a>
       </div>
       <div class="navbar-end">

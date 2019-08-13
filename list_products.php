@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/bulma.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title></title>
 </head>
 <body>
@@ -48,11 +49,11 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a href="ingreso.html" class="navbar-item">
-          Inicio
+          HOME
         </a>
 
         <a href="list_products.php" class="navbar-item">
-          Productos
+          PRODUCTS
         </a>
       </div>
       <div class="navbar-end">
@@ -61,21 +62,21 @@
       </div>
     </div>
   </nav><br>
-  <h1 class="title" style="text-align: center">Lista de Productos</h1>
-  <div class="container is-fluid">
+  <h1 class="title" style="text-align: center">List Products</h1>
+  <div class="container">
     <table class="table is-fullwidth is-hoverable">
-      <th>Nombre</th>
-      <th>Precio</th>
-      <th>Estado</th>
-      <th></th>
+      <th class="is-dark">Name</th>
+      <th class="is-dark">Price</th>
+      <th class="is-dark">Status</th>
+      <th class="is-dark"></th>
       <?php   foreach ($result as $value){  ?>
         <tr>
           <td><?php echo "<br>" . $value["product_name"];?></td>
           <td><?php echo "<br>" . $value["price"];?></td>
           <td><?php echo "<br>" . $value["is_active"];?></td>
           <td><?php echo "<a style='position: absolute; left:85%' class='button is-link is-rounded' href='update.php?id=" .$value["id"]
-          ."&precio=".$value["price"]."&nombre=".$value["product_name"]."&active=".$value["is_active"]."'>Editar</a>" ?>
-          <?php echo "<a style='position: absolute; left:20%%' class='button is-danger is-rounded' href='delete.php?id=".$value["id"]."'>Eliminar</a></td>"?>
+          ."&precio=".$value["price"]."&nombre=".$value["product_name"]."&active=".$value["is_active"]."'>Edit</a>" ?>
+          <?php echo "<a style='position: absolute; left:1s%%' class='button is-danger is-rounded' href='delete.php?id=".$value["id"]."'>Delete</a></td>"?>
         </tr>
       <?php } ?>
     </table>
